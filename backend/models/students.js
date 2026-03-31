@@ -96,18 +96,24 @@ const studentsSchima = new mongoose.Schema({
         street: String, city: String, state: String,
         pincode: { type: String, match: [/^\d{6}$/, 'Enter valid 6-digit pincode'] }
     },
+    //  Authentication 
+    password: {
+        type: String,
+        required: true,
+        minlength: [6, 'Password must be at least 6 characters']
+    },
     //  Academic Details
     rollNumber: { type: String, required: true, unique: true },
     class: { type: String, required: true },
     section: { type: String },
-    admissionDate: {  type: Date, default: Date.now },
+    admissionDate: { type: Date, default: Date.now },
     // Optional Features
-    profileImage: {  type: String, require : true  },
+    profileImage: { type: String, require: true },
     attendancePercentage: { type: Number, default: 0 },
     isActive: { type: Boolean, default: true },
     //Settings
-    Notification: {  type: Boolean, default: true },
-    theme : { type : string , default : light }
+    Notification: { type: Boolean, default: true },
+    theme: { type: string, default: light }
 
 }, { timestamps: true }
 );

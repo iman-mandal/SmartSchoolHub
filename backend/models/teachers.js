@@ -32,6 +32,12 @@ const teacherSchema = new mongoose.Schema({
         type: String, required: true, minlength: 10, maxlength: 10,
         match: [/^\d{10}$/, 'Enter valid 10-digit phone number']
     },
+    //  Authentication 
+    password: {
+        type: String,
+        required: true,
+        minlength: [6, 'Password must be at least 6 characters']
+    },
 
     address: {
         street: String,
