@@ -20,13 +20,13 @@ app.use(cookieParser());
 const connectToDB = require('./db');
 connectToDB();
 
-// routes
-const studentsRoutes = require('./routes/studentsRoutes');
-const teachersRoutes = require('./routes/teachersRoutes');
-const managementsRoutes = require('./routes/managementRoutes');
+// // routes
+// const studentsRoutes = require('./routes/studentsRoutes');
+// const teachersRoutes = require('./routes/teachersRoutes');
+// const managementsRoutes = require('./routes/managementRoutes');
 
-app.use('/students', studentsRoutes)
-app.use('/teachers', teachersRoutes);
-app.use('/managments', managementsRoutes);
+// app.use('/students', studentsRoutes)
+// app.use('/teachers', teachersRoutes);
+// app.use('/managments', managementsRoutes);
 
 module.exports = app;
